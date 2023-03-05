@@ -1,0 +1,66 @@
+\begin{enumerate}
+    \item Démontrer que la série $\displaystyle \sum \frac{(-1)^n}{\sqrt{n}}$ converge.
+
+    \exobox
+    {
+        $\displaystyle (\frac{(-1)^n}{\sqrt{n}})$ est une suite alternée. \\
+        Donc, on a
+    
+        $$
+            | \frac{(-1)^n}{\sqrt{n}} | = \frac{1}{\sqrt{n}}
+        $$
+
+        Or, $\displaystyle (\frac{1}{\sqrt{n}})$ est décroissante et converge vers 0. \\
+        D'après le critère spécial des séries alternées, $\displaystyle \sum \frac{(-1)^n}{\sqrt{n}}$ converge.
+    }
+
+    \vspace{10px}
+    
+    \item Démontrer l'égalité suivante
+
+    $$
+        \frac{(-1)^n}{\sqrt{n} + (-1)^n} = \frac{(-1)^n}{\sqrt{n}} - \frac{1}{n} + \frac{(-1)^n}{n\sqrt{n}} + o(\frac{1}{n\sqrt{n}})
+    $$
+
+    \exobox
+    {
+        \begin{align*}
+            \frac{(-1)^n}{\sqrt{n} + (-1)^n} &= \frac{(-1)^n}{\sqrt{n}(1 + \frac{(-1)^n}{\sqrt{n}})} \\
+            &= \frac{(-1)^n}{\sqrt{n}} \times \frac{1}{1 + \frac{(-1)^n}{\sqrt{n}}} \\
+            &= X \times \frac{1}{1 + X} \hspace{20px} \text{avec } X = \frac{(-1)^n}{\sqrt{n}} \text{ et } lim_{n \to + \infty} X = 0 \\
+            &= X \times (1 - X + X^2 + o(X^2) \\
+            &= X - X^2 + X^3 + o(X^3) \\
+            &= \frac{(-1)^n}{\sqrt{n}} - \frac{(-1)^{2n}}{(\sqrt{n})^2} + \frac{(-1)^{3n}}{(\sqrt{n})^3} + o(\frac{1}{(\sqrt{n})^3}) \\
+            &= \frac{(-1)^n}{\sqrt{n}} - \frac{1}{n} + \frac{(-1)^n}{n\sqrt{n}} + o(\frac{1}{n\sqrt{n}})
+        \end{align*}
+    }
+
+    \clearpage
+
+    \item Étudier la convergence de la série $\displaystyle \frac{(-1)^n}{\sqrt{n} + (-1)^n}$
+
+    \exobox
+    {
+        On pose $u_n = \frac{(-1)^n}{n\sqrt{n}} + o(\frac{1}{n\sqrt{n}})$. \\
+        $(u_n)$ est une suite alternée, \\
+        Donc, on a :
+
+        $$
+            | u_n | = \frac{1}{n\sqrt{n}} + o(\frac{1}{n\sqrt{n}}) \sim \frac{1}{n\sqrt{n}}
+        $$
+
+        D'après la formule de Riemann, \\
+        $\sum \frac{1}{n\sqrt{n}}$ converge. \\
+        Donc, par comparaison $\sum |u_n|$ converge. \\
+        Ainsi, $\sum u_n$ converge absolument. \\
+        On en conclut que $\sum u_n$ converge. \\
+
+        Or, on a $\displaystyle \frac{(-1)^n}{\sqrt{n} + (-1)^n} = \frac{(-1)^n}{\sqrt{n}} - \frac{1}{n} + u_n$. \\
+
+        Par somme de séries convergentes,
+        $\displaystyle \sum \frac{(-1)^n}{\sqrt{n}} + u_n$ converge. \\
+
+        Par somme d'une série convergente et d'une série divergente, \\
+        $\displaystyle \sum \frac{(-1)^n}{\sqrt{n} + (-1)^n}$ diverge.
+    }
+\end{enumerate}

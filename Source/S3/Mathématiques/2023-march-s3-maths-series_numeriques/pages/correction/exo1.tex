@@ -1,0 +1,197 @@
+\noindent Étudier la convergence des séries $\sum u_n$ de terme général suivant :
+
+\begin{enumerate}
+    \item $\displaystyle u_n = \frac{1}{\sqrt{n}} ln(1 + \frac{1}{\sqrt{n}})$.
+
+    \exobox
+    {
+        \begin{align*}
+            u_n &= \frac{1}{\sqrt{n}} ln(1 + \frac{1}{\sqrt{n}}) \\
+            &= \frac{1}{\sqrt{n}} (\frac{1}{\sqrt{n}} + o(\frac{1}{\sqrt{n}})) \\
+            &= \frac{1}{n} + o(\frac{1}{n}) \\
+            &\sim \frac{1}{n}
+        \end{align*}
+    
+        Or, $\forall n \in \ensN^*, u_n > 0$ et $\frac{1}{n} > 0$. \\
+        De plus, $\sum \frac{1}{n}$ diverge d'après la série de Riemann. \\
+        Donc, par comparaison, $\sum u_n$ diverge.
+    }
+
+    \vspace{10px}
+    
+    \item $\displaystyle u_n = (1 + \frac{1}{n})^n - e$.
+
+    \exobox
+    {
+        \begin{align*}
+            u_n &= (1 + \frac{1}{n})^n - e \\
+            &= e^{nln(1 + \frac{1}{n})} - e \\
+            &= e^{n(\frac{1}{n} - \frac{1}{2n^2} + o(\frac{1}{n^2}))} - e \\
+            &= e^{1 - \frac{1}{2n} + o(\frac{1}{n})} - e \\
+            &= e^1 \times e^{- \frac{1}{2n} + o(\frac{1}{n})} - e \\
+            &= e(1 - \frac{1}{2n} + o(\frac{1}{n})) - e \\
+            &= e - \frac{e}{2n} + o(\frac{1}{n}) - e \\
+            &= \frac{-e}{2n} + o(\frac{1}{n}) \\
+            &\sim \frac{-e}{2n}
+        \end{align*}
+
+        Or, $\forall n \in \ensN^*, u_n < 0$ et $\frac{1}{n} < 0$. \\
+        De plus, $\sum \frac{1}{n}$ diverge d'après la série de Riemann. On peut alors dire que la série $\sum \frac{-e}{2n}$ diverge. \\
+        Donc, par comparaison, $\sum u_n$ diverge.
+    }
+
+    \clearpage
+
+    \item $\displaystyle u_n = (\frac{n}{n + 1})^{n^2}$.
+
+    \exobox
+    {
+        \begin{align*}
+            \sqrt[n]{u_n} &= (\frac{n}{n + 1})^n \\
+            &= (\frac{n + 1}{n})^{-n} \\
+            &= e^{-nln(\frac{n + 1}{n})} \\
+            &= e^{-nln(1 + \frac{1}{n})} \\
+            &= e^{-n(\frac{1}{n} + o(\frac{1}{n}))} \\
+            &= e^{-1 + o(1)}
+        \end{align*}
+
+        Donc on a
+
+        $$
+            lim_{n \to + \infty} \sqrt[n]{u_n} = e^{-1} = \frac{1}{e}
+        $$
+
+        Or, $\frac{1}{e} < 1$. \\
+        De plus, $\forall n \in \ensN, u_n > 0$. \\
+        Donc, d'après la règle de Cauchy, \\
+        $\sum u_n$ est convergente.
+    }
+
+    \clearpage
+    
+    \item $\displaystyle u_n = \frac{(n!)^2}{(2n)!} a^n$ avec $a \in \ensR_+^*$.
+
+    \exobox
+    {
+        \begin{align*}
+            \frac{u_{n + 1}}{u_n} &= \frac{((n + 1)!)^2}{(2n + 2)!} a^{n + 1} \times \frac{(2n)!}{(n!)^2} \frac{1}{a^n} \\
+            &= (\frac{(n + 1)!}{n!})^2 \times \frac{(2n)!}{(2n + 2)!} \times \frac{a^{n + 1}}{a^n} \\
+            &= (n + 1)^2 \times \frac{1}{(2n + 2)(2n + 1)} \times a \\
+            &= \frac{n^2 + 2n + 1}{4n^2 + 4n + 2n + 2} \times a \\
+            &\sim \frac{n^2}{4n^2} \times a \\
+            &\sim \frac{a}{4}
+        \end{align*}
+
+        Or, $\forall n \in \ensN, u_n > 0$. \\
+        Donc, en utilisant la règle de d'Alembert, on a :
+
+        \begin{itemize}
+            \item Si $a < 4$, $\sum u_n$ converge.
+            \item Si $a > 4$, $\sum u_n$ diverge.
+        \end{itemize}
+
+        Si on prend $a = 4$, on a $u_n = \frac{(n!)^2}{(2n)!} \times 4^n$.
+
+        \begin{align*}
+            \frac{u_{n + 1}}{u_n} &= \frac{(n + 1)^2}{(2n + 1)(2n + 1)} \times 4 \\
+            &= \frac{4n^2 + 8n + 4}{4n^2 + 4n + 2n + 2} \\
+        \end{align*}
+
+        Or, $n \in \ensN$, donc $\frac{u_{n + 1}}{u_n} > 1 \Longleftrightarrow u_{n + 1} > u_n$. \\
+        Donc, $(u_n)$ est croissante et $\forall n \in \ensN, u_n \geq 0$. \\
+        Ainsi, $(u_n)$ ne peut pas tendre vers 0. \\
+        On en conclut que $\sum u_n$ diverge.
+    }
+
+    \vspace{10px}
+    
+    \item $\displaystyle u_n = \frac{(-1)^n ln(n)}{n}$.
+
+    \exobox
+    {
+        La série $(u_n)$ est alternée, \\
+        On a alors
+    
+        $$
+            | u_n | = | \frac{(-1)^nln(n)}{n} | = \frac{ln(n)}{n}
+        $$
+
+        Par croissance comparée, $(|u_n|)$ est convergente vers 0. \\
+        De plus, $(|u_n|)$ est décroissante. \\
+        Donc, d'après le critère spécial des séries alternées, $\sum u_n$ converge.
+    }
+
+    \clearpage
+    
+    \item $\displaystyle u_n = \frac{n^42^{-n^2} + (-1)^n}{\sqrt{n}}$.
+
+    \exobox
+    {
+        $$
+            u_n = \frac{n^42^{-n^2} + (-1)^n}{\sqrt{n}} = \frac{n^4 2^{-n^2}}{\sqrt{n}} + \frac{(-1)^n}{\sqrt{n}}
+        $$
+
+        Premièrement, nous avons, \\
+        $\displaystyle (\frac{(-1)}{\sqrt{n}})$ est une suite alternée. \\
+        Donc, on a
+        
+        $$
+            | \frac{(-1)^n}{\sqrt{n}} | = \frac{1}{\sqrt{n}}
+        $$
+
+        Or, $\displaystyle (\frac{1}{\sqrt{n}})$ tend vers 0. \\
+        De plus, $\displaystyle (\frac{1}{\sqrt{n}})$ est décroissante. \\
+        Donc, d'après le critère spécial des séries alternées, $\displaystyle \sum \frac{(-1)^n}{\sqrt{n}}$ converge. \\
+
+        Deuxièmement, nous avons
+
+        \begin{align*}
+            \sqrt[n]{\frac{n^4 2^{-n^2}}{\sqrt{n}}} &= \frac{n^{\frac{4}{n}} 2^{-n}}{n^{\frac{1}{2n}}} \\
+            &= 2^{-n} \times n^{\frac{4}{n} - \frac{1}{2n}} \\
+            &= \frac{1}{2^n} \times n^{\frac{7}{2n}} \\
+            &= \frac{e^{\frac{7}{2n}ln(n)}}{e^{nln(2)}}
+        \end{align*}
+
+        Or, par croissance comparée, $\displaystyle (\sqrt[n]{\frac{n^4 2^{-n^2}}{\sqrt{n}}})$ converge vers 0. \\
+        Donc, d'après la règle de Cauchy, \\
+        $\displaystyle \sum \frac{n^4 2^{-n^2}}{\sqrt{n}}$ converge. \\
+
+        Ainsi, par somme de deux séries convergentes, \\
+        $\sum u_n$ converge.
+    }
+
+    \clearpage
+    
+    \item $\displaystyle u_n = ln(1 + \frac{(-1)^n}{2n + 1})$.
+
+    \exobox
+    {
+        \begin{align*}
+            u_n &= ln(1 + \frac{(-1)^n}{2n + 1}) \\
+            &= \frac{(-1)^n}{2n + 1} - (\frac{(-1)^n}{2n + 1})^2 \times \frac{1}{2} + o(\frac{1}{n^2}) \\
+            &= \frac{(-1)^n}{2n + 1} - \frac{(-1)^{2n}}{2(2n + 1)^2} + o(\frac{1}{n^2}) \\
+            &= \frac{(-1)^n}{2n + 1} + v_n \hspace{30px} \text{avec } v_n = \frac{1}{2(2n + 1)^2} + o(\frac{1}{n^2})
+        \end{align*}
+
+        $$
+            v_n = \frac{1}{2(4n^2 + 4n + 1)} + o(\frac{1}{n^2}) \sim \frac{1}{8n^2}
+        $$
+
+        Or, $\displaystyle \forall n \in \ensN, \frac{1}{8n^2} > 0$ et $v_n > 0$. \\
+        De plus, $\displaystyle \sum \frac{1}{8n^2}$ converge d'après la formule de Riemann. \\
+        Donc, $\sum v_n$ converge par comparaison. \\
+
+        $(\frac{(-1)^n}{2n + 1})$ est une suite alternée, \\
+        Donc, on a
+
+        $$
+            | \frac{(-1)^n}{2n + 1} | = \frac{1}{2n + 1}
+        $$
+
+        Or, $\displaystyle (\frac{1}{2n + 1})$ est décroissante et converge vers 0. \\
+        Donc, d'après le critère spécial des séries alternées, $\displaystyle \sum \frac{(-1)^n}{2n + 1}$ converge. \\
+
+        Par somme de séries convergentes, \\
+        $\sum u_n$ converge.
+    }
+\end{enumerate}
