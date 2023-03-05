@@ -1,0 +1,46 @@
+\begin{theorem}[red]{Définition 1.1 : Série}
+    Soit $(u_n)$ une suite réelle. La \textbf{série} de terme générale $u_n$ notée $\sum u_n$ est la suite des \textit{sommes partielles} $(S_n)$ où pour tout $n \in \ensN$, $\displaystyle S_n = \sum_{k = 0}^{n} u_k$. On dit que $\sum u_n$ \textit{converge} si $(S_n)$ converge. On dit qu'elle \textit{diverge} sinon.
+\end{theorem}
+
+\begin{theorem}[black]{Exemple de la série géométrique}
+    Soit $q \in \ensR$. Alors, $\sum q^n$ converge ssi $|q| < 1$. \\
+    $\sum q^n$ est appelée \textit{série géométrique}.
+\end{theorem}
+
+\begin{theorem}[blue]{Propriété 1.2 : Stabilité de la convergence d'une série}
+    Soient $\sum u_n$, $\sum v_n$ deux séries numériques et $\lambda \in \ensR$. Alors
+
+    \begin{itemize}
+        \item ($\sum u_n$ converge et $\sum v_n$ converge) $\Longrightarrow$ $\sum(u_n + v_n)$ converge.
+        \item $\sum u_n$ converge $\Longrightarrow$ $\sum \lambda u_n$ converge.
+        \item ($\sum u_n$ converge et $\sum v_n$ diverge) $\Longrightarrow$ $\sum(u_n + v_n)$ diverge.
+    \end{itemize}
+\end{theorem}
+
+\begin{theorem}[red]{Définition 1.3 : Somme et reste d'une série convergente}
+    Soit $\sum u_n$ une série numérique convergente. On appelle \textbf{somme} de la série le nombre réel $S$ et le \textbf{reste} de la série, la suite $(R_n)$ définie pour tout $n \in \ensN$ par
+
+    $$
+        S = \sum_{n = 0}^{+ \infty} u_n = \lim_{n \to + \infty} S_n
+    $$
+
+    $$
+        R_n = \sum_{k = n + 1}^{+ \infty} u_k
+    $$
+\end{theorem}
+
+\begin{theorem}[blue]{Propriété 1.4 : Télescopage}
+    Soit $(u_n)$ une suite réelle. Alors,
+
+    $$
+        (u_n) \text{ converge } \Longleftrightarrow \sum (u_{n + 1} - u_n) \text{ converge }
+    $$
+\end{theorem}
+
+\begin{theorem}[blue]{Propriété 1.5 : Condition nécessaire de convergence}
+    Soit $(u_n)$ une suite relle. Alors
+
+    $$
+        \sum u_n converge \Longrightarrow \lim_{n \to + \infty} u_n = 0 
+    $$
+\end{theorem}

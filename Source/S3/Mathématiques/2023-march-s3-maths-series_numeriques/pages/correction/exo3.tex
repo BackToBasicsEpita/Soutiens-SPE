@@ -1,0 +1,82 @@
+\noindent Soient $a \in \ensR$ et la suite $(u_n)$ définie pour tout $n \geq 2$ par $\displaystyle u_n = \frac{(-1)^n}{(n + (-1)^n)^a}$. On cherche à discuter de la nature de $\sum u_n$ en fonction de $a$.
+
+\begin{enumerate}
+    \item Montrer que $\displaystyle u_n \sim \frac{(-1)^n}{n^a}$.
+
+    \exobox
+    {
+        \begin{align*}
+            u_n &= \frac{(-1)^n}{(n + (-1)^n)^a} \\
+            &= (-1)^n \times \frac{1}{(n(1 + \frac{(-1)^n}{n})^a} \\
+            &= \frac{(-1)^n}{n^a} \times (1 + \frac{(-1)^n}{n})^{-a} \\
+            &= \frac{(-1)^n}{n^a} (1 + o(1)) \\
+            &= \frac{(-1)^n}{n^a} + o(\frac{1}{n^a}) \\
+            &\sim \frac{(-1)^n}{n^a}
+        \end{align*}
+    }
+
+    \vspace{10px}
+
+    \item Montrer que, si $a \leq 0$, la série $\sum u_n$ diverge.
+
+    \exobox
+    {
+        $$
+            |u_n| \sim \frac{1}{n^a}
+        $$
+
+        Or, quand $a \leq 0$, $\displaystyle \lim_{n \to + \infty} \frac{1}{n^a} \neq 0$. \\
+        Par comparaison de deux suites de terme général positif, \\
+        $(|u_n|)$ ne converge pas vers 0. \\
+        Donc, $(u_n)$ ne converge pas vers 0. \\
+        Ainsi, $\sum u_n$ diverge.
+    }
+
+    \vspace{10px}
+    
+    \item On suppose dans la suite de l'exercice que $a > 0$. Déterminer $\lambda \in \ensR$ tel que $\displaystyle u_n = \frac{(-1)^n}{n^a} + \frac{\lambda}{n^{a + 1}} + o(\frac{1}{n^{a + 1}})$.
+
+    \exobox
+    {
+        \begin{align*}
+            u_n &= \frac{(-1)^n}{(n + (-1)^n)^a} \\
+            &= (-1)^n \times \frac{1}{(n(1 + \frac{(-1)^n}{n})^a} \\
+            &= \frac{(-1)^n}{n^a} \times (1 + \frac{(-1)^n}{n})^{-a} \\
+            &= \frac{(-1)^n}{n^a} (1 - a \times \frac{(-1)^n}{n} + o(\frac{1}{n})) \\
+            &= \frac{(-1)^n}{n^a} - a \times \frac{(-1)^{2n}}{n^{a + 1}} + o(\frac{1}{n^{a + 1}}) \\
+            &= \frac{(-1)^n}{n^a} + \frac{- a}{n^{a + 1}} + o(\frac{1}{n^{a + 1}})
+        \end{align*}
+
+        Donc, on a $\lambda = -a$.
+    }
+
+    \clearpage
+    
+    \item En déduire la nature de $\sum u_n$.
+
+    \exobox
+    {
+        Premièrement, nous avons $\displaystyle (\frac{(-1)^n}{n^a})$ qui est une suite alternée. \\
+        Donc, on a
+        
+        $$
+            | \frac{(-1)^n}{n^a} | = \frac{1}{n^a}
+        $$
+
+        Or, $\displaystyle (\frac{1}{n^a})$ est décroissante et tend vers 0 pour tout $a > 0$. \\
+        Donc, d'après le critère spécial des séries alternées, $\displaystyle \sum \frac{(-1)^n}{n^a}$ converge. \\
+
+        Deuxièmement, on a
+
+        $$
+            \frac{- a}{n^{a + 1}} + o(\frac{1}{n^{a + 1}}) \sim \frac{- a}{n^{a + 1}}
+        $$
+
+        Or, $\displaystyle \forall n \in \ensN, \frac{- a}{n^{a + 1}} < 0$. \\
+        De plus, d'après la formule de Riemann, $\displaystyle \sum \frac{- a}{n^{a + 1}}$ converge pour tout $a > 0$. \\
+        Donc, $\displaystyle \sum \frac{- a}{n^{a + 1}} + o(\frac{1}{n^{a + 1}})$ converge par comparaison. \\
+
+        Par somme de séries convergentes, \\
+        $\sum u_n$ converge.
+    }
+\end{enumerate}

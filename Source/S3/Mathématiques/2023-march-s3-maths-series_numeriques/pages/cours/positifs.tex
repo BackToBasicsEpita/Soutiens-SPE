@@ -1,0 +1,77 @@
+\begin{theorem}[red]{Définition 2.1 : Série à termes positifs}
+    On dit qu'une série numérique $\sum u_n$ est \textbf{à termes positifs} si pour tout $n \in \ensN, u_n \geq 0$.
+\end{theorem}
+
+\noindent \textbf{Remarque :} Si la série $\sum u_n$ à termes positifs, cela implique que sa suite de ses sommes partielles $(S_n)$ est croissante.
+
+\begin{theorem}[blue]{Propriété 2.2 : Condition de convergence}
+    Soient $\sum u_n$ une série à termes positifs et $(S_n)$ la suite de ses sommes partielles. Alors,
+
+    $$
+        \sum u_n \text{ converge } \Longleftrightarrow (S_n) \text{ est majorée}
+    $$
+\end{theorem}
+
+\begin{theorem}[blue]{Propriété 2.3 : Théorème de comparaison}
+    Soient $(u_n)$ et $(v_n)$ deux suites réelles telles que pour tout $n \in \ensN$, $0 \leq u_n \leq v_n$. Alors
+
+    \begin{itemize}
+        \item $\sum v_n$ converge $\Longrightarrow$ $\sum u_n$ converge.
+        \item $\sum u_n$ diverge $\Longrightarrow$ $\sum v_n$ diverge.
+    \end{itemize}
+\end{theorem}
+
+\begin{theorem}[red]{Définition 2.4 : Série de Riemann}
+    On appelle \textbf{série de Riemann} toute série de la forme $\displaystyle \sum \frac{1}{n^\alpha}$ avec $\alpha \in \ensR$.
+\end{theorem}
+
+\begin{theorem}[orange]{Théorème 2.5 : Convergence d'une série de Riemann}
+    Soit $\alpha \in \ensR$. Alors $\displaystyle \sum \frac{1}{n^\alpha}$ converge ssi $\alpha > 1$.
+\end{theorem}
+
+\begin{theorem}[blue]{Proposition 2.6 : Comparaisons de Landau}
+    Soient $(u_n)$ et $(v_n)$ deux suite réelles positives.
+
+    \begin{itemize}
+        \item Si $u_n = O(v_n)$, alors $\sum v_n$ converge $\Longrightarrow$ $\sum u_n$ converge.
+        \item Si $u_n = o(v_n)$, alors $\sum v_n$ converge $\Longrightarrow$ $\sum u_n$ converge.
+        \item Si $u_n \sim v_n$, alors $\sum u_n$ et $\sum v_n$ sont de même nature.
+    \end{itemize}
+\end{theorem}
+
+\begin{theorem}[blue]{Proposition 2.7 : Règle de Riemann}
+    Soit $(u_n$ une suite positive. \\
+    S'il existe $\alpha > 1$ tel que $\lim_{n \to + \infty} n^\alpha u_n = 0$, alors $\sum u_n$ converge.
+\end{theorem}
+
+\clearpage
+
+\begin{theorem}[orange]{Théorème 2.8 : Règle de d'Alembert}
+    Soit $(u_n)$ une suite réelle strictement positive telle que
+
+    $$
+        \lim_{n \to + \infty} \frac{u_{n + 1}}{u_n} = l \hspace{15px} \text{avec } l \in \ensR_+ \cup \{ + \infty \}
+    $$
+
+    \noindent Alors, on a
+
+    \begin{itemize}
+        \item $l < 1 \Longrightarrow \sum u_n$ converge
+        \item $l > 1 \Longrightarrow \sum u_n$ diverge
+    \end{itemize}
+\end{theorem}
+
+\begin{theorem}[orange]{Théorème 2.9 : Règle de Cauchy}
+    Soit $(u_n)$ une suite réelle strictement positive telle que
+
+    $$
+        \lim_{n \to + \infty} \sqrt[n]{u_n} = l \hspace{15px} \text{avec } l \in \ensR_+ \cup \{ + \infty \}
+    $$
+
+    \noindent Alors, on a
+
+    \begin{itemize}
+        \item $l < 1 \Longrightarrow \sum u_n$ converge
+        \item $l > 1 \Longrightarrow \sum u_n$ diverge
+    \end{itemize}
+\end{theorem}
